@@ -45,6 +45,7 @@ function NightSkybox.CreateSkybox()
     NightSkybox.win:SetDrawLayer(DL_BACKGROUND)
     NightSkybox.win:SetDrawTier(DT_LOW)
     NightSkybox.win:SetDrawLevel(0)
+    NightSkybox.win:Destroy3DRenderSpace()
     NightSkybox.win:Create3DRenderSpace()
 
     local control
@@ -91,8 +92,7 @@ local function OnAddOnLoaded(_, name)
     NightSkybox.CreateSkybox()
     NightSkybox.UpdateSkybox()
     EVENT_MANAGER:RegisterForUpdate(NightSkybox.name .. "Update", 100, NightSkybox.UpdateSkybox)
-    EVENT_MANAGER:RegisterForEvent(EVENT_PLAYER_ACTIVATED, NightSkybox.CreateSkybox)
-    EVENT_MANAGER:RegisterForEvent(EVENT_ZONE_CHANGED, NightSkybox.CreateSkybox)
+    EVENT_MANAGER:RegisterForEvent(NightSkybox.name, EVENT_PLAYER_ACTIVATED, NightSkybox.CreateSkybox)
 end
 
 EVENT_MANAGER:RegisterForEvent(NightSkybox.name, EVENT_ADD_ON_LOADED, OnAddOnLoaded)

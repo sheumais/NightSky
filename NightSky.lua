@@ -19,7 +19,7 @@ NightSkybox.textures = {
     [5] = "NightSky/images/py.dds",
     [6] = "NightSky/images/pz.dds",
 }
-NightSkybox.size = 1500
+NightSkybox.size = 2200
 NightSkybox.faceOffsets = {
     NX = {-NightSkybox.size/2, 0, 0},
     NY = {0, -NightSkybox.size/2, 0},
@@ -85,9 +85,9 @@ function NightSkybox.UpdateSkybox()
     local total_seconds = hours * 3600 + minutes * 60 + seconds
     local float = math.cos(pi * total_seconds / 43200)
     local float_pow = math.pow(float, 5) -- https://www.desmos.com/calculator/6rk1lye11z
-    local triangle_wave = 7.272205216643e-05 * total_seconds + pi/2
+    local rotation_factor = 7.272205216643e-05 * total_seconds + pi/2
     NightSkybox.win:Set3DRenderSpaceOrigin(worldX, worldY, worldZ)
-    NightSkybox.win:Set3DRenderSpaceOrientation(triangle_wave, -0.8, -pi/8)
+    NightSkybox.win:Set3DRenderSpaceOrientation(rotation_factor, -0.8, -pi/8)
     NightSkybox.win:SetAlpha(float_pow)
 end
 

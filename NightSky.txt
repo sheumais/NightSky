@@ -1,9 +1,8 @@
 ## Title: NightSky
-## Description: Custom Skybox
+## Description: Custom Skybox in ESO featuring the Milky Way galaxy
 ## Author: TheMrPancake
 ## APIVersion: 101044
 ## AddOnVersion: 1
-## OptionalDependsOn: Breadcrumbs
 
 ; This Add-on is not created by, affiliated with or sponsored by ZeniMax Media Inc. or its affiliates. 
 ; The Elder Scrolls® and related logos are registered trademarks or trademarks of ZeniMax Media Inc. in the United States and/or other countries. 
@@ -12,5 +11,13 @@
 ; You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
 
 ; Images Credit: ESO/S. Brunier
+
+; Please ensure when using this addon that your graphics settings are:
+; Anti-Aliasing: FXAA or Off
+; DLSS Mode: Disabled
+; FSR Mode: Off
+; SubSampling Quality: High
+; Using SubSampling Quality below high will break the depth buffer
+; Using anti-aliasing other than FXAA or Off will cause shimmering issues on transparent pixels, such as on trees.
 
 NightSky.lua
